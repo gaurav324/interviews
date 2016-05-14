@@ -12,6 +12,7 @@
 using namespace std; 
 
 string palindrome(string s) {
+	int len = s.size();
 	bool ans[len][len];
 	for (int i=0; i < len; ++i) for (int j=0; j < len; ++j) ans[i][j] = false;
 	
