@@ -11,7 +11,33 @@
 #include <iostream>
 using namespace std; 
 
-string palindrome(string s) {
+string longestPalindrome(string s) {
+	int max_l = 0; int i1;
+	for (int i=0; i < s.size(); ++i) {
+	    int l1 = i, l2 = i;
+	    while(l1 >= 0 && l2 < s.size()) {
+					cout << l1 <<  " " << l2 << " " << max_l << endl; 
+	        if (s[l1] == s[l2]) {
+							if ((l2 - l1 + 1) > max_l) { max_l = l2 - l1 + 1; i1 = l1;}
+	            --l1; ++l2;
+	        } else {
+	            break;
+	        }
+	    }
+	    l1 = i, l2 = i+1;
+	    while(l1 >= 0 && l2 < s.size()) {
+	        if (s[l1] == s[l2]) {
+							if ((l2 - l1 + 1) > max_l) { max_l = l2 - l1 + 1; i1 = l1; }
+	            --l1; ++l2;
+	        } else {
+	            break;
+	        }
+	    }
+	}
+	return s.substr(i1, max_l);
+}
+
+string palindromeDP(string s) {
 	int len = s.size();
 	bool ans[len][len];
 	for (int i=0; i < len; ++i) for (int j=0; j < len; ++j) ans[i][j] = false;
@@ -43,6 +69,10 @@ string palindrome(string s) {
 	}
 
 	return s.substr(l1, max);
+}
+
+string palindrome(string s) {
+	return longestPalindrome(s);
 }
 
 int main() {
