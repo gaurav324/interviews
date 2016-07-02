@@ -13,7 +13,7 @@
 using namespace std;
 
 int atoi(string s) {
-	int index = 0;
+	  int index = 0;
   	while(true) {
   		if (!std::isspace(s[index])) {
   			break;

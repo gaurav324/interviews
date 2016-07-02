@@ -1,0 +1,26 @@
+In-order traversal
+10	25	40	50	60	75	
+Pre-order traversal
+50	25	10	40	75	60	
+Post-order traversal
+10	40	25	60	75	50	
+In-order traversal Iterative
+50--0
+25--0
+10--0
+Read NULL
+10--1
+10	Read NULL
+25--1
+25	40--0
+Read NULL
+40--1
+40	Read NULL
+50--1
+50	75--0
+60--0
+Read NULL
+60--1
+60	Read NULL
+75--1
+75	Read NULL
