@@ -1,5 +1,13 @@
 // Determine if a linkedlist is a palindrome or not.
 //
+// THINGS LEARNT:
+// 1) Link list has slow pointers and fast pointers approach, which is quite cool.
+// 2) Idea here was to reverse the half linked list and then go in both directions.
+//    Here again we have two choices: Reverse the first part or reverse the later part.
+//    That does not matter. Thing that actually matters is after reversing, where we 
+//    do start the matching from, inside out or out to in. If we come from in to out, 
+//    we have to take care of even/odd case. If we come from out to in, both pointers
+//    either merge at odd length center or both become null (even case).
 #include <iostream>
 
 using namespace std;
@@ -21,7 +29,7 @@ bool isLinkedListPalindrome(Node* root) {
 		fast = fast->next->next;
 	}
 	
-	// Reverse the latter part.
+	// Reverse the later part.
 	Node *next = NULL;
 	Node *prev = NULL;
 	while(slow != NULL) {
