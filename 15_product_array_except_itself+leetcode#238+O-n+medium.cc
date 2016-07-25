@@ -13,7 +13,6 @@
 // 3) Hashes one can think of.
 // 4) Sorting.
 // 5) XORs or other bit operations. 
-// 
 
 #include <vector>
 using namespace std;

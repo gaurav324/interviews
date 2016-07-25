@@ -3,6 +3,7 @@
 //
 // Things learnt:
 // 1) Inversion should trigger the thought of merge sort.
+// -- (EDIT:::) This is a wrong way of thing about it. Inversions are only indicative of amount of unsortedness in an array.
 // 2) Merge Sort use extra space. Doing inplace is hard, and we can skip that. 
 // 
 #include <iostream>

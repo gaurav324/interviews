@@ -54,6 +54,34 @@ public:
 		cout << endl;
 	}
 
+	void InOrderTraversalIterativeBetter() {
+		Node* node = root;
+		vector<Node*> stack;
+		while(node != NULL || !stack.empty()) {
+			if (node != NULL) {
+				stack.push_back(node);
+				node = node->left;
+			} else {	
+			  node = stack.back();
+				stack.pop_back();
+				cout << node->v << "\t";
+				node = node->right;
+			}
+		}
+	}
+
+	void PostOrderTraversalIterative() {
+		Node* node = root;
+		vector<Node*> stack;
+		while(node != NULL || !stack.empty()) {
+			if (node != NULL) {
+				stack.push_back(node);
+				node = node->left;
+			} else {
+			}
+		}
+	}
+
 	void PreOrderTraversalRecursive() {
 		PreOrderTraversalHelper(root);
 		cout << "\n";
@@ -108,7 +136,6 @@ private:
 		PostOrderTraversalHelper(root->right);
 		cout << root->v << "\t";
 	}
-
 };
 
 int main() {
@@ -131,4 +158,7 @@ int main() {
 
 	cout << "In-order traversal Iterative" << endl;
 	tree.InOrderTraversalIterative();
+	
+	cout << "In-order traversal Iterative better" << endl;
+	tree.InOrderTraversalIterativeBetter();
 }
